@@ -23,11 +23,11 @@ namespace pings
             _tasks = new List<Task>();
 
             _table = new TableBuilder(TableConfig.Unicode())
-                .AddColumn("Наименование").RowFormatter<string>((val) => val)
-                .AddColumn("IP адрес")
-                .AddColumn("Время ответа").RowFormatter<string>((val) => val)
-                .AddColumn("Потери")
-                .AddColumn("История").RowFormatter<string>((val) => val)
+                .AddColumn(Multilanguage.Name).RowFormatter<string>((val) => val)
+                .AddColumn(Multilanguage.IP)
+                .AddColumn(Multilanguage.Time).RowFormatter<string>((val) => val)
+                .AddColumn(Multilanguage.Loss)
+                .AddColumn(Multilanguage.History).RowFormatter<string>((val) => val)
                 .Build();
 
             try

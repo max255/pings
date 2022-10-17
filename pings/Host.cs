@@ -73,7 +73,7 @@ namespace pings
 
                 if (_time < 1)
                 {
-                    time = "<".ForegroundColor(Color.Green) + "   1 мс";
+                    time = "<".ForegroundColor(Color.Green) + "   1 " + Multilanguage.Ms;
                 }
                 else if (_time > 1000)
                 {
@@ -81,7 +81,7 @@ namespace pings
                 }
                 else
                 {
-                    time = string.Format("{0,5:#} мс", _time);
+                    time = string.Format("{0,5:#} " + Multilanguage.Ms, _time);
                 }
 
                 return time;
@@ -117,7 +117,7 @@ namespace pings
                     colored = colored + c;
                 }
 
-                return colored; // _loss_count + " / " + _ping_count + " " + _gain_count ;
+                return colored;
             }        
         }
 
