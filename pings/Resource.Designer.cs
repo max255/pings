@@ -61,6 +61,29 @@ namespace pings {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на [Hosts]
+        ///GOOGLE = 8.8.8.8
+        ///YANDEX = 77.88.8.8
+        ///QUAD = 9.9.9.9
+        ///LO = 127.0.0.1
+        ///ERR = 192.168.168.168.
+        /// </summary>
+        internal static string config {
+            get {
+                return ResourceManager.GetString("config", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на WARNING! config.ini file not found! A new file will be created. Don&apos;t forget to make changes to the file before the next launch of the application..
+        /// </summary>
+        internal static string en_err_file_not_found {
+            get {
+                return ResourceManager.GetString("en_err_file_not_found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на History.
         /// </summary>
         internal static string en_history {
@@ -111,6 +134,15 @@ namespace pings {
         internal static string en_time {
             get {
                 return ResourceManager.GetString("en_time", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ВНИМАНИЕ! config.ini файл не найден! Будет создан новый файл. Не забудьте изменить файл перед следующим запуском приложения..
+        /// </summary>
+        internal static string ru_err_file_not_found {
+            get {
+                return ResourceManager.GetString("ru_err_file_not_found", resourceCulture);
             }
         }
         

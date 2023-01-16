@@ -44,6 +44,8 @@ namespace pings
 
         private static void SetupConsole()
         {
+            Console.Title = "Pinger";
+
             IntPtr handle = GetStdHandle(STD_INPUT_HANDLE);
 
             int mode;

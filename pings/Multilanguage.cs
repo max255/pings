@@ -4,18 +4,26 @@ namespace pings
 {
     public class Multilanguage
     {
-        private static CultureInfo _culture;
+        private static string _lang;
 
         static Multilanguage()
         {
-            _culture = CultureInfo.InstalledUICulture;
+            try
+            {
+                CultureInfo _culture = CultureInfo.InstalledUICulture;
+                _lang = _culture.TwoLetterISOLanguageName;
+            }
+            catch (System.Exception)
+            {
+                _lang = "en";
+            }
         }
 
         public static string Name
         {
             get
             {
-                switch (_culture.TwoLetterISOLanguageName)
+                switch (_lang)
                 {
                     case "ru":
                         {
@@ -37,7 +45,7 @@ namespace pings
         {
             get
             {
-                switch (_culture.TwoLetterISOLanguageName)
+                switch (_lang)
                 {
                     case "ru":
                         {
@@ -59,7 +67,7 @@ namespace pings
         {
             get
             {
-                switch (_culture.TwoLetterISOLanguageName)
+                switch (_lang)
                 {
                     case "ru":
                         {
@@ -81,7 +89,7 @@ namespace pings
         {
             get
             {
-                switch (_culture.TwoLetterISOLanguageName)
+                switch (_lang)
                 {
                     case "ru":
                         {
@@ -103,7 +111,7 @@ namespace pings
         {
             get
             {
-                switch (_culture.TwoLetterISOLanguageName)
+                switch (_lang)
                 {
                     case "ru":
                         {
@@ -125,7 +133,7 @@ namespace pings
         {
             get
             {
-                switch (_culture.TwoLetterISOLanguageName)
+                switch (_lang)
                 {
                     case "ru":
                         {
@@ -142,5 +150,30 @@ namespace pings
                 }
             }
         }
+
+        public static string ErrFileNotFound
+        {
+            get
+            {
+                switch (_lang)
+                {
+                    case "ru":
+                        {
+                            return Resource.ru_err_file_not_found;
+                        }
+                    case "en":
+                        {
+                            return Resource.en_err_file_not_found;
+                        }
+                    default:
+                        {
+                            return Resource.en_err_file_not_found;
+                        }
+                }
+            }
+        }
     }
 }
+
+
+

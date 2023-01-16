@@ -45,7 +45,11 @@ namespace pings
             }
             catch (FileNotFoundException)
             {
-                throw new Exception("config.ini file not found!");
+                Console.WriteLine(Multilanguage.ErrFileNotFound);
+                File.WriteAllText("config.ini", Resource.config);
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
+                Environment.Exit(0);
             }
         }
 
